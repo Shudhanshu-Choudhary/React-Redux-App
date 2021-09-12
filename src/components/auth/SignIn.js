@@ -1,22 +1,16 @@
 import { useState } from "react";
 
-const SignUp = () => {
+const SignIn = () => {
 
     const [mailId,setMailId] = useState('');
     const [password, setPassword] = useState('');
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const signUpDetails = {
-            firstName,
-            lastName,
+        const loginDetails = {
             mailId,
-            password,
+            password
         }
-
-        console.log(signUpDetails);
         
     }
 
@@ -24,29 +18,8 @@ const SignUp = () => {
         <div className="container">
             <form onSubmit={handleSubmit} className="white">
                 <h5 className="grey-text text-darken-3">
-                            SignUp
+                    SignIn
                 </h5>
-                <div className="input-field">
-                    <label htmlFor="firstname">FirstName</label>
-                    <input type="text" 
-                        value={firstName} 
-                        id="firstname" 
-                        required
-                        onChange={e => setFirstName(e.target.value)}
-                    />
-
-                </div>
-
-                <div className="input-field">
-                    <label htmlFor="lastname">LastName</label>
-                    <input type="text" 
-                        value={lastName} 
-                        id="lastname" 
-                        required
-                        onChange={e => setLastName(e.target.value)}
-                    />
-
-                </div>
 
                 <div className="input-field">
                     <label htmlFor="email">Email</label>
@@ -68,11 +41,11 @@ const SignUp = () => {
                     />
                 </div>
                 <button className="btn pink lighten-1 z-depth-0">
-                    SignUp
+                    Login
                 </button>
             </form>
         </div>
      );
 }
  
-export default SignUp;
+export default SignIn;
